@@ -1,0 +1,42 @@
+# Root-level node modules (if any)
+node_modules/
+.env
+.DS_Store
+*.log
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Ignore OS files
+Thumbs.db
+ehthumbs.db
+
+# Ignore IDE/editor folders
+.vscode/
+.idea/
+
+# Ignore build outputs
+build/
+dist/
+
+# Ignore frontend node_modules
+whatsapp/node_modules/
+whatsapp/.env
+whatsapp/build/
+
+# Ignore backend node_modules
+back/node_modules/
+back/.env
+
+# Optional: if using socket.io logs or debug
+debug.log
+
+# Ignore test coverage
+coverage/
+
+# Ignore lockfiles (optional, keep one type only if needed)
+package-lock.json
+yarn.lock
+pnpm-lock.yaml

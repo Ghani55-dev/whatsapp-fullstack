@@ -1,0 +1,111 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.app {
+  display: flex;
+  height: 100vh;
+  background-color: #121b22;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 30%;
+  background-color: #202c33;
+  color: white;
+  border-right: 1px solid #2a3942;
+  overflow-y: auto;
+}
+
+.sidebar div {
+  padding: 15px;
+  border-bottom: 1px solid #2a3942;
+  cursor: pointer;
+}
+
+.sidebar div:hover {
+  background-color: #2a3942;
+}
+
+/* Chat Window */
+.chat-window {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-image: url('C:\Users\user\whatsapp-frontend\src\components\istockphoto-1403848173-612x612.jpg'); /* sample WhatsApp-style wallpaper */
+  background-repeat: repeat;
+  background-size: contain;
+  color: white;
+}
+
+/* Header */
+.chat-header {
+  background-color: #202c33;
+  padding: 12px;
+  font-weight: bold;
+  border-bottom: 1px solid #2a3942;
+}
+
+/* Messages */
+.chat-messages {
+  flex: 1;
+  padding: 15px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.message {
+  background-color: #202c33;
+  color: white;
+  padding: 10px 14px;
+  border-radius: 8px;
+  max-width: 70%;
+  margin: 5px 0;
+}
+
+.message.sent {
+  align-self: flex-end;
+  background-color: #005c4b;
+}
+
+/* Message Timestamp */
+.message small {
+  display: block;
+  margin-top: 5px;
+  font-size: 11px;
+  color: #ccc;
+}
+
+/* Send box */
+.send-box {
+  display: flex;
+  padding: 10px;
+  background-color: #202c33;
+  border-top: 1px solid #2a3942;
+}
+
+.send-box input {
+  flex: 1;
+  background-color: #2a3942;
+  border: none;
+  color: white;
+  padding: 10px;
+  border-radius: 20px;
+  font-size: 15px;
+}
+
+.send-box input::placeholder {
+  color: #aaa;
+}
+
+.send-box button {
+  background-color: #005c4b;
+  border: none;
+  color: white;
+  padding: 10px 16px;
+  margin-left: 10px;
+  border-radius: 20px;
+  cursor: pointer;
+}

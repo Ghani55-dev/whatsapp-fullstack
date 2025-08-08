@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Add Message</title>
+</head>
+<body style="font-family: sans-serif; padding: 20px;">
+  <h2>Add Message to WhatsApp Clone</h2>
+  <form id="messageForm">
+    <label>wa_id:</label><br>
+    <input type="text" id="wa_id" required><br><br>
+
+    <label>Name:</label><br>
+    <input type="text" id="name"><br><br>
+
+    <label>Message Text:</label><br>
+    <textarea id="text" required></textarea><br><br>
+
+    <button type="submit">Add Message</button>
+  </form>
+
+  <p id="status" style="color: green; margin-top: 20px;"></p>
+
+  <script>
+    document.getElementById("messageForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const wa_id = document.getElementById("wa_id").value;
+      const name = document.getElementById("name").value;
+      const text = document.getElementById("text").value;
+
+      const payload = {
+        id: "msg_" + Date.now(),
+        wa_id,
+        name,
+        text,
+        timestamp: new Date().toISOString(),
+        status: "sent"
+      };
+
+      const res = await fetch("/webhook", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+      });
+
+      if (res.ok) {
+        document.getElementById("status").innerText = "Message added successfully!";
+        document.getElementById("messageForm").reset();
+      } else {
+        document.getElementById("status").innerText = "Failed to add message.";
+        document.getElementById("status").style.color = "red";
+      }
+    });
+  </script>
+</body>
+</html>
