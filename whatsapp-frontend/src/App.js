@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import bgImage from './istockphoto-1403848173-612x612.jpg';
 import { io } from "socket.io-client";
 import './App.css';
 import Sidebar from './components/Sidebar';
